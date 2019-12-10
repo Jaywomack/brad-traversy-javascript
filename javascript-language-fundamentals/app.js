@@ -378,46 +378,76 @@
  * Object Literals
  */
 
-const person = {
-  firstName: "Steve",
-  lastName: "Smith",
-  age: 30,
-  email: "steve@aol.com",
-  hobbies: ["music", "sports"],
-  address: {
-    city: "Miami",
-    state: "FL"
-  },
-  getBirthYear: function() {
-    return 2017 - this.age;
-  }
-};
+// const person = {
+//   firstName: "Steve",
+//   lastName: "Smith",
+//   age: 30,
+//   email: "steve@aol.com",
+//   hobbies: ["music", "sports"],
+//   address: {
+//     city: "Miami",
+//     state: "FL"
+//   },
+//   getBirthYear: function() {
+//     return 2017 - this.age;
+//   }
+// };
+
+// let val;
+
+// val = person;
+// // Get specific value
+// val = person.firstName;
+// val = person["lastName"];
+// val = person.age;
+// val = person.hobbies;
+// val = person.address.state;
+// val = person.address["city"];
+// val = person.getBirthYear();
+
+// console.log(val);
+
+// const people = [
+//   { name: "John", age: 30 },
+//   { name: "Mike", age: 23 }
+// ];
+
+// for (let i = 0; i < people.length; i++) {
+//   console.log(people[i].name);
+// }
+
+// for (let i = 0; i < people.length; i++) {
+//   console.log(people[i].age);
+// }
+
+// console.log(people.map(person => person.age));
+
+/***
+ * DAte and Time
+ */
 
 let val;
 
-val = person;
-// Get specific value
-val = person.firstName;
-val = person["lastName"];
-val = person.age;
-val = person.hobbies;
-val = person.address.state;
-val = person.address["city"];
-val = person.getBirthYear();
+const today = new Date();
+let birthday = new Date("9-10-1981 11:25:00");
+birthday = new Date("septmber 10 1981 11:25:00");
 
-console.log(val);
+// Query Dates
+val = today.getMonth();
+val = today.getDay();
+val = today.getFullYear();
+val = today.getHours();
+val = today.getMinutes();
+val = today.getHours();
+val = today.getSeconds();
+val = today.getMilliseconds();
+val = today.getTime();
 
-const people = [
-  { name: "John", age: 30 },
-  { name: "Mike", age: 23 }
-];
-
-for (let i = 0; i < people.length; i++) {
-  console.log(people[i].name);
-}
-
-for (let i = 0; i < people.length; i++) {
-  console.log(people[i].age);
-}
-
-console.log(people.map(person => person.age));
+// Manipulate Dates
+birthday.setMonth(2);
+birthday.setDate(12);
+birthday.setFullYear(1985);
+birthday.setHours(3);
+birthday.setMinutes(30);
+birthday.setSeconds(25);
+console.log(birthday);
