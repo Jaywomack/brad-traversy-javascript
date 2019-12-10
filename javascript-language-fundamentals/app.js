@@ -463,7 +463,7 @@
 //  }
 
 // === checks to make sure the value and the type are the same   == only checks the value and ignores the type
-const id = 99;
+// const id = 99;
 // // Equal to
 // if (id === 100) {
 //   console.log("true");
@@ -496,7 +496,7 @@ const id = 99;
 
 // If else
 
-const color = "yellow";
+// const color = "yellow";
 
 // if (color === "red") {
 //   console.log("Color is red.");
@@ -508,27 +508,72 @@ const color = "yellow";
 
 // Logical operators
 
-const name = "Steve";
-const age = 20;
-// and &&
-if (age > 0 && age < 12) {
-  console.log(`${name} is a child`);
-} else if (age >= 13 && age <= 19) {
-  console.log(`${name} is a teenager`);
-} else {
-  console.log(`${name} is an adult`);
+// const name = "Steve";
+// const age = 20;
+// // and &&
+// if (age > 0 && age < 12) {
+//   console.log(`${name} is a child`);
+// } else if (age >= 13 && age <= 19) {
+//   console.log(`${name} is a teenager`);
+// } else {
+//   console.log(`${name} is an adult`);
+// }
+
+// // or ||
+// if (age < 16 || age > 65) {
+//   console.log(`${name} can not run in the race.`);
+// } else {
+//   console.log(`${name} is registered for the race.`);
+// }
+
+// // ternary operator
+// console.log(id === 100 ? "Correct" : "incorrect");
+
+// // without braces
+// if (id === 100) console.log("correct");
+// else console.log("incorrect");
+
+/***
+ * Switch statements
+ * Use switch statements if there are a lot of cases rather than if else
+ */
+
+const color = "yellow";
+
+switch (color) {
+  case "red":
+    console.log("Color is red");
+    break;
+  case "blue":
+    console.log("Color is blue");
+    break;
+  default:
+    console.log(" Color is not red or blue");
 }
 
-// or ||
-if (age < 16 || age > 65) {
-  console.log(`${name} can not run in the race.`);
-} else {
-  console.log(`${name} is registered for the race.`);
+let day;
+switch (new Date().getDay()) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+    day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+    break;
 }
 
-// ternary operator
-console.log(id === 100 ? "Correct" : "incorrect");
-
-// without braces
-if (id === 100) console.log("correct");
-else console.log("incorrect");
+console.log(`Today is ${day}`);
