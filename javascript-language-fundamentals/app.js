@@ -173,29 +173,97 @@
  * Numbers and the Math Object
  */
 
-const num1 = 100;
-const num2 = 50;
+// const num1 = 100;
+// const num2 = 50;
+// let val;
+
+// // Simple Math with Numbers
+// val = num1 + num2;
+// val = num1 * num2;
+// val = num1 / num2;
+// val = num1 - num2;
+// val = num1 % num2;
+
+// // Math Object
+// val = Math.PI; //pie
+// val = Math.E; // Eulers number
+// val = Math.round(2.8);
+// val = Math.ceil(2.2); //rounds up
+// val = Math.floor(2.8); //round down
+// val = Math.sqrt(64); // Square root
+// val = Math.abs(-3); // Absolute number
+// val = Math.pow(8, 2); // 8 to the power of two
+// val = Math.min(2, 3, 4, 1, 55, 6, 3, -2); // Min will return the smallest number
+// val = Math.max(2, 3, 4, 1, 55, 6, 3, -2); // Max will return the largest number
+// val = Math.random(); // Will return a random decimal
+// val = Math.floor(Math.random() * 20 + 1); // Will return a number between 1-100
+
+// console.log(val);
+
+/***
+ *
+ * String methods and concatenation
+ *
+ *
+ *
+ */
+
+const firstName = "William";
+const lastName = "Johnson";
+const age = 34;
+const str = "Hello there my name is brad";
+const tags = "web design, web development, front end";
+
 let val;
 
-// Simple Math with Numbers
-val = num1 + num2;
-val = num1 * num2;
-val = num1 / num2;
-val = num1 - num2;
-val = num1 % num2;
+val = firstName + " " + lastName;
 
-// Math Object
-val = Math.PI; //pie
-val = Math.E; // Eulers number
-val = Math.round(2.8);
-val = Math.ceil(2.2); //rounds up
-val = Math.floor(2.8); //round down
-val = Math.sqrt(64); // Square root
-val = Math.abs(-3); // Absolute number
-val = Math.pow(8, 2); // 8 to the power of two
-val = Math.min(2, 3, 4, 1, 55, 6, 3, -2); // Min will return the smallest number
-val = Math.max(2, 3, 4, 1, 55, 6, 3, -2); // Max will return the largest number
-val = Math.random(); // Will return a random decimal
-val = Math.floor(Math.random() * 20 + 1); // Will return a number between 1-100
+// Append
+val = "Brad ";
+val += "Traversy";
+val = "Hello, my name is " + firstName + " and I am " + age;
+
+// Escaping
+val = "That's awesome, I can't wait";
+
+// Length
+val = firstName.length;
+
+// concat
+val = firstName.concat(" ", lastName); // .concat will concatenate the space and then the last name
+
+// template literal
+val = `${firstName} ${lastName}`;
+
+// ChangeCase
+val = firstName.toUpperCase();
+val = firstName.toLowerCase();
+
+// index and indexOf()
+val = firstName[2];
+
+val = firstName.indexOf("l");
+val = firstName.lastIndexOf("l");
+
+// charAt()
+val = firstName.charAt("1");
+// Get last character
+val = firstName.charAt(firstName.length - 1);
+
+// substring
+val = firstName.substring(0, 4);
+
+// slice
+val = firstName.slice(-3); // Will start at the end and take the last 3
+
+// Split
+val = str.split(" ");
+val = tags.split(",");
+
+// Replace()
+val = str.replace("brad", "Jack");
+
+// includes()
+val = str.includes("Hello");
 
 console.log(val);
