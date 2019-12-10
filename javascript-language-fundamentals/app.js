@@ -426,28 +426,109 @@
  * DAte and Time
  */
 
-let val;
+// let val;
 
-const today = new Date();
-let birthday = new Date("9-10-1981 11:25:00");
-birthday = new Date("septmber 10 1981 11:25:00");
+// const today = new Date();
+// let birthday = new Date("9-10-1981 11:25:00");
+// birthday = new Date("septmber 10 1981 11:25:00");
 
-// Query Dates
-val = today.getMonth();
-val = today.getDay();
-val = today.getFullYear();
-val = today.getHours();
-val = today.getMinutes();
-val = today.getHours();
-val = today.getSeconds();
-val = today.getMilliseconds();
-val = today.getTime();
+// // Query Dates
+// val = today.getMonth();
+// val = today.getDay();
+// val = today.getFullYear();
+// val = today.getHours();
+// val = today.getMinutes();
+// val = today.getHours();
+// val = today.getSeconds();
+// val = today.getMilliseconds();
+// val = today.getTime();
 
-// Manipulate Dates
-birthday.setMonth(2);
-birthday.setDate(12);
-birthday.setFullYear(1985);
-birthday.setHours(3);
-birthday.setMinutes(30);
-birthday.setSeconds(25);
-console.log(birthday);
+// // Manipulate Dates
+// birthday.setMonth(2);
+// birthday.setDate(12);
+// birthday.setFullYear(1985);
+// birthday.setHours(3);
+// birthday.setMinutes(30);
+// birthday.setSeconds(25);
+// console.log(birthday);
+
+/***
+ * if else statements
+ */
+
+//  if(somethings) {
+//    do something
+//  } else {
+//    do something else
+//  }
+
+// === checks to make sure the value and the type are the same   == only checks the value and ignores the type
+const id = 99;
+// // Equal to
+// if (id === 100) {
+//   console.log("true");
+// } else {
+//   console.log("false");
+// }
+
+// // Not equal to
+// // a double equal will check the value and type is not equal
+// if (id != 101) {
+//   console.log("correct");
+// } else {
+//   console.log("incorrect");
+// }
+
+// // Test if undefined
+// if (typeof id !== undefined) {
+//   console.log(`The id is ${id}`);
+// } else {
+//   console.log("No ID");
+// }
+
+// Greater or less than
+
+// if (id >= 100) {
+//   console.log("correct");
+// } else {
+//   console.log("incorrect");
+// }
+
+// If else
+
+const color = "yellow";
+
+// if (color === "red") {
+//   console.log("Color is red.");
+// } else if (color === "blue") {
+//   console.log("Color is blue");
+// } else {
+//   console.log("Color is not red or blue");
+// }
+
+// Logical operators
+
+const name = "Steve";
+const age = 20;
+// and &&
+if (age > 0 && age < 12) {
+  console.log(`${name} is a child`);
+} else if (age >= 13 && age <= 19) {
+  console.log(`${name} is a teenager`);
+} else {
+  console.log(`${name} is an adult`);
+}
+
+// or ||
+if (age < 16 || age > 65) {
+  console.log(`${name} can not run in the race.`);
+} else {
+  console.log(`${name} is registered for the race.`);
+}
+
+// ternary operator
+console.log(id === 100 ? "Correct" : "incorrect");
+
+// without braces
+if (id === 100) console.log("correct");
+else console.log("incorrect");
