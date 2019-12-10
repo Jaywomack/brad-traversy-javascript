@@ -208,62 +208,102 @@
  *
  */
 
-const firstName = "William";
-const lastName = "Johnson";
-const age = 34;
-const str = "Hello there my name is brad";
-const tags = "web design, web development, front end";
+// const firstName = "William";
+// const lastName = "Johnson";
+// const age = 34;
+// const str = "Hello there my name is brad";
+// const tags = "web design, web development, front end";
 
-let val;
+// let val;
 
-val = firstName + " " + lastName;
+// val = firstName + " " + lastName;
 
-// Append
-val = "Brad ";
-val += "Traversy";
-val = "Hello, my name is " + firstName + " and I am " + age;
+// // Append
+// val = "Brad ";
+// val += "Traversy";
+// val = "Hello, my name is " + firstName + " and I am " + age;
 
-// Escaping
-val = "That's awesome, I can't wait";
+// // Escaping
+// val = "That's awesome, I can't wait";
 
-// Length
-val = firstName.length;
+// // Length
+// val = firstName.length;
 
-// concat
-val = firstName.concat(" ", lastName); // .concat will concatenate the space and then the last name
+// // concat
+// val = firstName.concat(" ", lastName); // .concat will concatenate the space and then the last name
 
-// template literal
-val = `${firstName} ${lastName}`;
+// // template literal
+// val = `${firstName} ${lastName}`;
 
-// ChangeCase
-val = firstName.toUpperCase();
-val = firstName.toLowerCase();
+// // ChangeCase
+// val = firstName.toUpperCase();
+// val = firstName.toLowerCase();
 
-// index and indexOf()
-val = firstName[2];
+// // index and indexOf()
+// val = firstName[2];
 
-val = firstName.indexOf("l");
-val = firstName.lastIndexOf("l");
+// val = firstName.indexOf("l");
+// val = firstName.lastIndexOf("l");
 
-// charAt()
-val = firstName.charAt("1");
-// Get last character
-val = firstName.charAt(firstName.length - 1);
+// // charAt()
+// val = firstName.charAt("1");
+// // Get last character
+// val = firstName.charAt(firstName.length - 1);
 
-// substring
-val = firstName.substring(0, 4);
+// // substring
+// val = firstName.substring(0, 4);
 
-// slice
-val = firstName.slice(-3); // Will start at the end and take the last 3
+// // slice
+// val = firstName.slice(-3); // Will start at the end and take the last 3
 
-// Split
-val = str.split(" ");
-val = tags.split(",");
+// // Split
+// val = str.split(" ");
+// val = tags.split(",");
 
-// Replace()
-val = str.replace("brad", "Jack");
+// // Replace()
+// val = str.replace("brad", "Jack");
 
-// includes()
-val = str.includes("Hello");
+// // includes()
+// val = str.includes("Hello");
 
-console.log(val);
+// console.log(val);
+
+/***
+ * Template Literals / Template Strings
+ */
+
+const name = "John";
+const age = 29;
+const job = "Web Developer";
+const city = "Miami";
+
+// Without Template literals (es5)
+
+html =
+  "<ul> <li>Name: " +
+  name +
+  "</li><li>Age: " +
+  age +
+  "</li><li>Job: " +
+  job +
+  "</li> <li>City: " +
+  city +
+  "</li> </ul>";
+
+function hello() {
+  return "Hello";
+}
+// Template literals (es6)
+html = `
+  <ul>
+  <li>Name: ${name}</li>
+  <li>Age: ${age}</li>
+  <li>Job: ${job}</li>
+  <li>City: ${city}</li>
+  <li> ${2 + 2}</li>
+  <li> ${hello()}</li>
+  <li> ${age > 30 ? "over 30" : "Under 30"}</li> 
+  </ul>
+  `;
+
+document.body.innerHTML = html;
