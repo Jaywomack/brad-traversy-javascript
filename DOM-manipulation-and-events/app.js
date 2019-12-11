@@ -245,49 +245,93 @@
 // Replacing Elements
 
 // Create Element
-const newHeading = document.createElement("h2");
-// add id
-newHeading.id = "task-title";
-// new text node
-newHeading.appendChild(document.createTextNode("Task List"));
+// const newHeading = document.createElement("h2");
+// // add id
+// newHeading.id = "task-title";
+// // new text node
+// newHeading.appendChild(document.createTextNode("Task List"));
 
-// Get the old heading
-const oldHeading = document.getElementById("task-title");
-// Parent
-const cardAction = document.querySelector(".card-action");
+// // Get the old heading
+// const oldHeading = document.getElementById("task-title");
+// // Parent
+// const cardAction = document.querySelector(".card-action");
 
-// Replace
-cardAction.replaceChild(newHeading, oldHeading);
+// // Replace
+// cardAction.replaceChild(newHeading, oldHeading);
 
-// // Remove Element
-const lis = document.querySelectorAll("li");
-const list = document.querySelector("ul");
+// // // Remove Element
+// const lis = document.querySelectorAll("li");
+// const list = document.querySelector("ul");
 
-// Remove list item
-lis[0].remove();
+// // Remove list item
+// lis[0].remove();
 
-// remove by child
-list.removeChild(lis[3]);
+// // remove by child
+// list.removeChild(lis[3]);
 
-// CLASSES AND ATTRIBUTES
-const firstLi = document.querySelector("li:first-child");
-const link = firstLi.children[0];
-// console.log(firstLi);
+// // CLASSES AND ATTRIBUTES
+// const firstLi = document.querySelector("li:first-child");
+// const link = firstLi.children[0];
+// // console.log(firstLi);
 
-let val;
+// let val;
 
-val = link.className;
-val = link.classList;
-val = link.classList[0];
-link.classList.add("test");
-link.classList.remove("test");
-val = link;
+// val = link.className;
+// val = link.classList;
+// val = link.classList[0];
+// link.classList.add("test");
+// link.classList.remove("test");
+// val = link;
 
-// attributes
-val = link.getAttribute("href");
-val = link.setAttribute("href", "http://google.com");
-val = link.hasAttribute("href");
-link.setAttribute("title", "google");
-link.removeAttribute("title");
-val = link;
-console.log(val);
+// // attributes
+// val = link.getAttribute("href");
+// val = link.setAttribute("href", "http://google.com");
+// val = link.hasAttribute("href");
+// link.setAttribute("title", "google");
+// link.removeAttribute("title");
+// val = link;
+// console.log(val);
+
+/***
+ *
+ * Event listeners and the Event Object
+ */
+
+// document.querySelector(".clear-tasks").addEventListener("click", function(e) {
+//   console.log("clicked");
+//   e.preventDefault();
+// });
+
+document.querySelector(".clear-tasks").addEventListener("click", onClick);
+
+function onClick(e) {
+  // console.log("clicked");
+  e.preventDefault();
+
+  let val;
+  val = e;
+
+  // Event target Element
+  val = e.target;
+  val = e.target.id;
+  val = e.target.className;
+  val = e.target.classList;
+
+  // e.target.innerText = "Hello";
+
+  // Event type
+  val = e.type;
+
+  // Timestamp
+  val = e.timeStamp;
+
+  // Coordinates
+  val = e.clientY;
+  val = e.clientX;
+
+  // Coordinates event relative to the element
+  val = e.offsetY;
+  val = e.offsetX;
+
+  console.log(val);
+}
