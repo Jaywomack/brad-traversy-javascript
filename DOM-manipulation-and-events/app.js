@@ -69,14 +69,74 @@
 
 // document.querySelector
 
-console.log(document.querySelector("#task-title"));
-console.log(document.querySelector(".card-title"));
-console.log(document.querySelector("h5"));
+// console.log(document.querySelector("#task-title"));
+// console.log(document.querySelector(".card-title"));
+// console.log(document.querySelector("h5"));
 
-document.querySelector("li").style.color = "red";
-document.querySelector(" ul li").style.color = "blue";
+// document.querySelector("li").style.color = "red";
+// document.querySelector(" ul li").style.color = "blue";
 
-document.querySelector("li:last-child").style.color = "red";
-document.querySelector("li:nth-child(3)").style.color = "yellow";
-document.querySelector("li:nth-child(4)").textContent = "Hello World";
-document.querySelector("li:nth-child(odd)").style.background = "#ccc";
+// document.querySelector("li:last-child").style.color = "red";
+// document.querySelector("li:nth-child(3)").style.color = "yellow";
+// document.querySelector("li:nth-child(4)").textContent = "Hello World";
+// document.querySelector("li:nth-child(odd)").style.background = "#ccc";
+
+/***
+ * DOM selectors for multiple elements
+ *
+ */
+// document.getElementsByClassName
+// const items = document.getElementsByClassName("collection-item");
+// console.log(items);
+// console.log(items[0]);
+// items[0].style.color = "red";
+// items[3].textContent = "Hello";
+
+// const listItems = document
+//   .querySelector("ul")
+//   .getElementsByClassName("collection-item");
+
+// console.log(listItems);
+
+// // document.getElementByTagName
+// let lis = document.getElementsByTagName("li");
+// console.log(lis);
+
+// lis = Array.from(lis);
+// lis.reverse();
+
+// lis.forEach((li, index) => {
+//   console.log(li.className);
+//   li.textContent = `${index}: Reversed list with JS`;
+// });
+
+// console.log(lis);
+
+// querySelectorAll  //returns a nodelist
+
+let items = document.querySelectorAll("ul.collection li.collection-item");
+
+items.forEach((item, index) => {
+  item.textContent = `${index}: Hello`;
+});
+
+const liOdd = document.querySelectorAll("li:nth-child(odd)");
+const liEven = document.querySelectorAll("li:nth-child(even)");
+
+liOdd.forEach(li => {
+  li.style.background = "#ccc";
+});
+
+liEven.forEach(li => {
+  li.style.background = "#ff0000";
+});
+
+for (i = 0; i < liEven.length; i++) {
+  liEven[i].style.color = "white";
+}
+
+for (i = 0; i < liOdd.length; i++) {
+  liOdd[i].style.color = "dodgerblue";
+}
+
+console.log(items);
