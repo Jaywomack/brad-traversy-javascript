@@ -145,19 +145,19 @@
  * TRAVERSING THE DOM
  */
 
-let val;
+// let val;
 
-const list = document.querySelector("ul.collection");
-const listItem = document.querySelector("li.collection-item:first-child");
+// const list = document.querySelector("ul.collection");
+// const listItem = document.querySelector("li.collection-item:first-child");
 
-val = listItem;
-val = list;
+// val = listItem;
+// val = list;
 
-// Get child nodes
-val = list.childNodes;
-val = list.childNodes[0];
-val = list.childNodes[0].nodeName;
-val = list.childNodes[0].nodeType;
+// // Get child nodes
+// val = list.childNodes;
+// val = list.childNodes[0];
+// val = list.childNodes[0].nodeName;
+// val = list.childNodes[0].nodeType;
 
 // Nodetype
 // 1- Element
@@ -168,35 +168,126 @@ val = list.childNodes[0].nodeType;
 //10- Doctype
 
 // Get children element nodes
-val = list.children;
-val = list.children[1];
-list.children[1].textContent = "hello";
+// val = list.children;
+// val = list.children[1];
+// list.children[1].textContent = "hello";
 
-// Children of children
-list.children[3].children[0].id = "test-link";
-val = list.children[3].children;
+// // Children of children
+// list.children[3].children[0].id = "test-link";
+// val = list.children[3].children;
 
-// first Child
-val = list.firstChild; // Can return a text node rather than an element
-val = list.firstElementChild; // will return an HTML element rather than a node
+// // first Child
+// val = list.firstChild; // Can return a text node rather than an element
+// val = list.firstElementChild; // will return an HTML element rather than a node
 
-// Last child
-val = list.lastChild;
-val = list.lastElementChild;
+// // Last child
+// val = list.lastChild;
+// val = list.lastElementChild;
 
-// Count child Element
-val = list.childElementCount;
+// // Count child Element
+// val = list.childElementCount;
 
-// Get parent node
-val = listItem.parentNode;
-val = listItem.parentElement;
-val = listItem.parentElement.parentElement;
+// // Get parent node
+// val = listItem.parentNode;
+// val = listItem.parentElement;
+// val = listItem.parentElement.parentElement;
 
-// Get next sibling
-val = listItem.nextSibling;
-val = listItem.nextElementSibling;
+// // Get next sibling
+// val = listItem.nextSibling;
+// val = listItem.nextElementSibling;
 
-// Get next sibling
-val = listItem.previousSibling;
-val = listItem.previousElementSibling;
+// // Get next sibling
+// val = listItem.previousSibling;
+// val = listItem.previousElementSibling;
+// console.log(val);
+
+/***
+ * Creating Elements
+ */
+
+// Create Element
+// const li = document.createElement("li");
+
+// // add class
+// li.className = "collection-item";
+
+// // add id
+// li.id = "new-item";
+
+// // add attribute
+// li.setAttribute("title", "New Item");
+
+// // create text node and append
+// li.appendChild(document.createTextNode("Hello I am a text node"));
+
+// // Create new link element
+// const link = document.createElement("a");
+
+// // Add classes to link element
+// link.className = ".delete-item secondary-content";
+// console.log(link);
+// // Add icon HTML
+// link.innerHTML = '<i class="fa fa-remove"></i>';
+
+// // Append link into li
+// li.appendChild(link);
+
+// // Append li a child to ul
+
+// document.querySelector("ul.collection").appendChild(li);
+
+// console.log(li);
+
+/***
+ * REMOVING AND REPLACING ELEMENTS
+ */
+
+// Replacing Elements
+
+// Create Element
+const newHeading = document.createElement("h2");
+// add id
+newHeading.id = "task-title";
+// new text node
+newHeading.appendChild(document.createTextNode("Task List"));
+
+// Get the old heading
+const oldHeading = document.getElementById("task-title");
+// Parent
+const cardAction = document.querySelector(".card-action");
+
+// Replace
+cardAction.replaceChild(newHeading, oldHeading);
+
+// // Remove Element
+const lis = document.querySelectorAll("li");
+const list = document.querySelector("ul");
+
+// Remove list item
+lis[0].remove();
+
+// remove by child
+list.removeChild(lis[3]);
+
+// CLASSES AND ATTRIBUTES
+const firstLi = document.querySelector("li:first-child");
+const link = firstLi.children[0];
+// console.log(firstLi);
+
+let val;
+
+val = link.className;
+val = link.classList;
+val = link.classList[0];
+link.classList.add("test");
+link.classList.remove("test");
+val = link;
+
+// attributes
+val = link.getAttribute("href");
+val = link.setAttribute("href", "http://google.com");
+val = link.hasAttribute("href");
+link.setAttribute("title", "google");
+link.removeAttribute("title");
+val = link;
 console.log(val);
