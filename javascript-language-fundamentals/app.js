@@ -585,22 +585,22 @@
 
 // FUNCTION DECLARATIONS
 
-function greet(firstName = "John", lastName = "Doe") {
-  // if (typeof firstName === "undefined") {
-  //   firstName = "John";
-  // }
-  // if (typeof lastName === "undefined") {
-  //   lastName = "Doe";
-  // }
-  // console.log("Hello");
-  return `Hello ${firstName} ${lastName}`;
-}
+// function greet(firstName = "John", lastName = "Doe") {
+// if (typeof firstName === "undefined") {
+//   firstName = "John";
+// }
+// if (typeof lastName === "undefined") {
+//   lastName = "Doe";
+// }
+// console.log("Hello");
+//   return `Hello ${firstName} ${lastName}`;
+// }
 
-// FUNCTION EXPRESSIONS
+// // FUNCTION EXPRESSIONS
 
-const square = function(x = 3) {
-  return x * x;
-};
+// const square = function(x = 3) {
+//   return x * x;
+// };
 
 //
 //  IMMEDIATELY INVOKABLE FUNCTION EXPRESSIONS iife-S
@@ -677,7 +677,7 @@ const square = function(x = 3) {
 
 // LOOP THROUGH ARRAYS
 
-const cars = ["Ford", "Chevy", "Honda", "Toyota"];
+// const cars = ["Ford", "Chevy", "Honda", "Toyota"];
 
 // for (let i = 0; i < cars.length; i++) {
 //   console.log(cars[i]);
@@ -713,12 +713,78 @@ const cars = ["Ford", "Chevy", "Honda", "Toyota"];
 // console.log(ids);
 
 // FOR IN LOOP
-const user = {
-  firstName: "John",
-  lastName: "Doe",
-  age: 40
-};
+// const user = {
+//   firstName: "John",
+//   lastName: "Doe",
+//   age: 40
+// };
 
-for (let x in user) {
-  console.log(`${x} : ${user[x]}`);
-}
+// for (let x in user) {
+//   console.log(`${x} : ${user[x]}`);
+// }
+
+/***
+ *
+ * WINDOW OBJECT
+ * Methods
+ * Properties
+ */
+
+// alert("Window.alert is the same as alert becuase we are at the global level.");
+
+// Prompt
+// Will receive an input which can be saved to a variable or used elsewhere
+// const input = prompt();
+// alert(input);
+
+// Confirm
+// Used often when you are deleting something
+// if (confirm("Are you sure?")) {
+//   console.log("YES");
+// } else {
+//   console.log("NO");
+// }
+
+// PROPERTIES
+
+let val;
+// Outer height and width
+val = window.outerHeight;
+val = window.outerWidth;
+
+// Inner height and width
+val = window.innerHeight;
+val = window.innerWidth;
+
+// Scroll points
+// Scroll points will give the position of the scroll bar on the x and y axis
+val = window.scrollY;
+val = window.scrollX;
+
+// Location Object
+val = window.location;
+val = window.location.hostname;
+val = window.location.port;
+val = window.location.href;
+val = window.location.search;
+
+// redirect
+// window.location.href = "http://google.com";
+
+// Reload
+// window.location.reload() // will reload the page
+
+// History Object
+// window.history.go(-1) //the number will take you back a certain amount to previous webpages
+
+val = window.history.length;
+
+// Navigator Object
+val = window.navigator;
+val = window.navigator.appName;
+val = window.navigator.appVersion;
+val = window.navigator.userAgent;
+val = window.navigator.platform;
+val = window.navigator.vendor;
+val = window.navigator.language;
+console.log(val);
