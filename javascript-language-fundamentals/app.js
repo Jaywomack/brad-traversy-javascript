@@ -747,44 +747,72 @@
 
 // PROPERTIES
 
-let val;
-// Outer height and width
-val = window.outerHeight;
-val = window.outerWidth;
+// let val;
+// // Outer height and width
+// val = window.outerHeight;
+// val = window.outerWidth;
 
-// Inner height and width
-val = window.innerHeight;
-val = window.innerWidth;
+// // Inner height and width
+// val = window.innerHeight;
+// val = window.innerWidth;
 
-// Scroll points
-// Scroll points will give the position of the scroll bar on the x and y axis
-val = window.scrollY;
-val = window.scrollX;
+// // Scroll points
+// // Scroll points will give the position of the scroll bar on the x and y axis
+// val = window.scrollY;
+// val = window.scrollX;
 
-// Location Object
-val = window.location;
-val = window.location.hostname;
-val = window.location.port;
-val = window.location.href;
-val = window.location.search;
+// // Location Object
+// val = window.location;
+// val = window.location.hostname;
+// val = window.location.port;
+// val = window.location.href;
+// val = window.location.search;
 
-// redirect
-// window.location.href = "http://google.com";
+// // redirect
+// // window.location.href = "http://google.com";
 
-// Reload
-// window.location.reload() // will reload the page
+// // Reload
+// // window.location.reload() // will reload the page
 
-// History Object
-// window.history.go(-1) //the number will take you back a certain amount to previous webpages
+// // History Object
+// // window.history.go(-1) //the number will take you back a certain amount to previous webpages
 
-val = window.history.length;
+// val = window.history.length;
 
-// Navigator Object
-val = window.navigator;
-val = window.navigator.appName;
-val = window.navigator.appVersion;
-val = window.navigator.userAgent;
-val = window.navigator.platform;
-val = window.navigator.vendor;
-val = window.navigator.language;
-console.log(val);
+// // Navigator Object
+// val = window.navigator;
+// val = window.navigator.appName;
+// val = window.navigator.appVersion;
+// val = window.navigator.userAgent;
+// val = window.navigator.platform;
+// val = window.navigator.vendor;
+// val = window.navigator.language;
+
+// console.log(val);
+
+/***
+ * Block scope with let and const
+ */
+
+var a = 1;
+let b = 2;
+const c = 3;
+let d = 99;
+
+// function test() {
+//   var a = 4;
+//   let b = 5;
+//   const c = 6;
+//   console.log("Function Scope: ", a, b, c, d);
+// }
+// test();
+if (true) {
+  // Block Scope
+  var a = 4;
+  let b = 5;
+  const c = 6;
+  console.log("Block Scope: ", a, b, c);
+}
+console.log("Global Scope: ", a, b, c);
+
+// The global var is changed by the block scope var
