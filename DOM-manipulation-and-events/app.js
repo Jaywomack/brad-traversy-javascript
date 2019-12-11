@@ -114,29 +114,89 @@
 
 // querySelectorAll  //returns a nodelist
 
-let items = document.querySelectorAll("ul.collection li.collection-item");
+// let items = document.querySelectorAll("ul.collection li.collection-item");
 
-items.forEach((item, index) => {
-  item.textContent = `${index}: Hello`;
-});
+// items.forEach((item, index) => {
+//   item.textContent = `${index}: Hello`;
+// });
 
-const liOdd = document.querySelectorAll("li:nth-child(odd)");
-const liEven = document.querySelectorAll("li:nth-child(even)");
+// const liOdd = document.querySelectorAll("li:nth-child(odd)");
+// const liEven = document.querySelectorAll("li:nth-child(even)");
 
-liOdd.forEach(li => {
-  li.style.background = "#ccc";
-});
+// liOdd.forEach(li => {
+//   li.style.background = "#ccc";
+// });
 
-liEven.forEach(li => {
-  li.style.background = "#ff0000";
-});
+// liEven.forEach(li => {
+//   li.style.background = "#ff0000";
+// });
 
-for (i = 0; i < liEven.length; i++) {
-  liEven[i].style.color = "white";
-}
+// for (i = 0; i < liEven.length; i++) {
+//   liEven[i].style.color = "white";
+// }
 
-for (i = 0; i < liOdd.length; i++) {
-  liOdd[i].style.color = "dodgerblue";
-}
+// for (i = 0; i < liOdd.length; i++) {
+//   liOdd[i].style.color = "dodgerblue";
+// }
 
-console.log(items);
+// console.log(items);
+
+/***
+ * TRAVERSING THE DOM
+ */
+
+let val;
+
+const list = document.querySelector("ul.collection");
+const listItem = document.querySelector("li.collection-item:first-child");
+
+val = listItem;
+val = list;
+
+// Get child nodes
+val = list.childNodes;
+val = list.childNodes[0];
+val = list.childNodes[0].nodeName;
+val = list.childNodes[0].nodeType;
+
+// Nodetype
+// 1- Element
+// 2- Attribute (deprecated)
+// 3- Text node
+// 8- Comment
+// 9- Document itself
+//10- Doctype
+
+// Get children element nodes
+val = list.children;
+val = list.children[1];
+list.children[1].textContent = "hello";
+
+// Children of children
+list.children[3].children[0].id = "test-link";
+val = list.children[3].children;
+
+// first Child
+val = list.firstChild; // Can return a text node rather than an element
+val = list.firstElementChild; // will return an HTML element rather than a node
+
+// Last child
+val = list.lastChild;
+val = list.lastElementChild;
+
+// Count child Element
+val = list.childElementCount;
+
+// Get parent node
+val = listItem.parentNode;
+val = listItem.parentElement;
+val = listItem.parentElement.parentElement;
+
+// Get next sibling
+val = listItem.nextSibling;
+val = listItem.nextElementSibling;
+
+// Get next sibling
+val = listItem.previousSibling;
+val = listItem.previousElementSibling;
+console.log(val);
