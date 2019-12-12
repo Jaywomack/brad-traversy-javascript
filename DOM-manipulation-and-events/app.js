@@ -380,37 +380,79 @@
  * Keyboard and input events
  */
 
-const form = document.querySelector("form");
-const taskInput = document.getElementById("task");
-const heading = document.querySelector("h5");
+// const form = document.querySelector("form");
+// const taskInput = document.getElementById("task");
+// const heading = document.querySelector("h5");
 
-// Clear input
-taskInput.value = "";
+// // Clear input
+// taskInput.value = "";
 
-// form.addEventListener("submit", runEvent);
-// Keydown
-// taskInput.addEventListener("keydown", runEvent);
-// Keyup
-// taskInput.addEventListener("keyup", runEvent);
-// keypress
-// taskInput.addEventListener("keypress", runEvent);
-// Focus
-// taskInput.addEventListener("focus", runEvent);
-// Blur
-// taskInput.addEventListener("blur", runEvent);
-// Cut
-// taskInput.addEventListener("cut", runEvent);
-// Paste
-// taskInput.addEventListener("paste", runEvent);
-// Input
-taskInput.addEventListener("input", runEvent);
-function runEvent(e) {
-  console.log(`Event type : ${e.type}`);
+// // form.addEventListener("submit", runEvent);
+// // Keydown
+// // taskInput.addEventListener("keydown", runEvent);
+// // Keyup
+// // taskInput.addEventListener("keyup", runEvent);
+// // keypress
+// // taskInput.addEventListener("keypress", runEvent);
+// // Focus
+// // taskInput.addEventListener("focus", runEvent);
+// // Blur
+// // taskInput.addEventListener("blur", runEvent);
+// // Cut
+// // taskInput.addEventListener("cut", runEvent);
+// // Paste
+// // taskInput.addEventListener("paste", runEvent);
+// // Input
+// taskInput.addEventListener("input", runEvent);
+// function runEvent(e) {
+//   console.log(`Event type : ${e.type}`);
 
-  // console.log(e.target.va lue);
+//   // console.log(e.target.va lue);
 
-  heading.innerText = e.target.value;
-  // Get input value
-  // console.log(taskInput.value);
-  // e.preventDefault();
+//   heading.innerText = e.target.value;
+//   // Get input value
+// console.log(taskInput.value);
+// e.preventDefault();
+//}
+
+/***
+ * Event bubbling and delegation
+ */
+
+// Event bubbling
+// When a single element is clicked all of the parent elements are clicked as well
+
+// document.querySelector(".card-title").addEventListener("click", function() {
+//   console.log("card-title");
+// });
+
+// document.querySelector(".card-content").addEventListener("click", function() {
+//   console.log("card-content");
+// });
+
+// document.querySelector(".card").addEventListener("click", function() {
+//   console.log("card");
+// });
+
+// document.querySelector(".col").addEventListener("click", function() {
+//   console.log("col");
+// });
+
+// Event delegation
+
+// const delItem = document.querySelector(".delete-item");
+
+// delItem.addEventListener("click", deleteItem);
+
+document.body.addEventListener("click", deleteItem);
+
+function deleteItem(e) {
+  // if (e.target.parentElement.className === "delete-item secondary-content") {
+  //   console.log("delete item");
+  // }
+
+  if (event.target.parentElement.classList.contains("delete-item")) {
+    console.log("delete-item");
+    e.target.parentElement.parentElement.remove();
+  }
 }
