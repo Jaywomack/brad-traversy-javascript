@@ -484,27 +484,27 @@
 // localStorage.clear();
 // console.log(name, age);
 
-document.querySelector("form").addEventListener("submit", function(e) {
-  const task = document.getElementById("task").value;
+// document.querySelector("form").addEventListener("submit", function(e) {
+//   const task = document.getElementById("task").value;
 
-  let tasks;
-  if (localStorage.getItem("tasks") === null) {
-    tasks = [];
-  } else {
-    tasks = JSON.parse(localStorage.getItem("tasks"));
-  }
+//   let tasks;
+//   if (localStorage.getItem("tasks") === null) {
+//     tasks = [];
+//   } else {
+//     tasks = JSON.parse(localStorage.getItem("tasks"));
+//   }
 
-  tasks.push(task);
+//   tasks.push(task);
 
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-  console.log(task);
-  alert("Task Saved");
+//   localStorage.setItem("tasks", JSON.stringify(tasks));
+//   console.log(task);
+//   alert("Task Saved");
 
-  e.preventDefault();
-});
+//   e.preventDefault();
+// });
 
-const tasks = JSON.parse(localStorage.getItem("tasks"));
+// const tasks = JSON.parse(localStorage.getItem("tasks"));
 
-tasks.forEach(function(task) {
-  console.log(task);
-});
+// tasks.forEach(function(task) {
+//   console.log(task);
+// });
