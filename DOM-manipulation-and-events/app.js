@@ -302,36 +302,115 @@
 //   e.preventDefault();
 // });
 
-document.querySelector(".clear-tasks").addEventListener("click", onClick);
+// document.querySelector(".clear-tasks").addEventListener("click", onClick);
 
-function onClick(e) {
-  // console.log("clicked");
-  e.preventDefault();
+// function onClick(e) {
+//   // console.log("clicked");
+//   e.preventDefault();
 
-  let val;
-  val = e;
+//   let val;
+//   val = e;
 
-  // Event target Element
-  val = e.target;
-  val = e.target.id;
-  val = e.target.className;
-  val = e.target.classList;
+//   // Event target Element
+//   val = e.target;
+//   val = e.target.id;
+//   val = e.target.className;
+//   val = e.target.classList;
 
-  // e.target.innerText = "Hello";
+//   // e.target.innerText = "Hello";
 
-  // Event type
-  val = e.type;
+//   // Event type
+//   val = e.type;
 
-  // Timestamp
-  val = e.timeStamp;
+//   // Timestamp
+//   val = e.timeStamp;
 
-  // Coordinates
-  val = e.clientY;
-  val = e.clientX;
+//   // Coordinates
+//   val = e.clientY;
+//   val = e.clientX;
 
-  // Coordinates event relative to the element
-  val = e.offsetY;
-  val = e.offsetX;
+//   // Coordinates event relative to the element
+//   val = e.offsetY;
+//   val = e.offsetX;
 
-  console.log(val);
+//   console.log(val);
+// }
+
+/***
+ *
+ * Mouse Events
+ */
+
+// const clearBtn = document.querySelector(".clear-tasks");
+// const card = document.querySelector(".card");
+// const heading = document.querySelector("h5");
+
+// // Click
+// // clearBtn.addEventListener("click", runEvent);
+// // DBL Click
+// // clearBtn.addEventListener("dblclick", runEvent);
+// // Mouse Down
+// // clearBtn.addEventListener("mousedown", runEvent);
+// // Mouse up
+// // clearBtn.addEventListener("mouseup", runEvent);
+// // Mouseenter
+// // clearBtn.addEventListener("mouseenter", runEvent);
+// // Mouseleave
+// // clearBtn.addEventListener("mouseleave", runEvent);
+
+// // mouseover
+// // card.addEventListener("mouseover", runEvent);
+// // mouseout
+// // card.addEventListener("mouseout", runEvent);
+// // mousemove
+// card.addEventListener("mousemove", runEvent);
+// //
+
+// // Event Handler
+// function runEvent(e) {
+//   console.log(`Event type: ${e.type}`);
+//   e.preventDefault();
+
+//   heading.textContent = `MouseX: ${e.offsetX} MouseY: ${e.offsetY}`;
+//   document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, ${e.offsetY})`;
+// }
+
+/***
+ *
+ * Keyboard and input events
+ */
+
+const form = document.querySelector("form");
+const taskInput = document.getElementById("task");
+const heading = document.querySelector("h5");
+
+// Clear input
+taskInput.value = "";
+
+// form.addEventListener("submit", runEvent);
+// Keydown
+// taskInput.addEventListener("keydown", runEvent);
+// Keyup
+// taskInput.addEventListener("keyup", runEvent);
+// keypress
+// taskInput.addEventListener("keypress", runEvent);
+// Focus
+// taskInput.addEventListener("focus", runEvent);
+// Blur
+// taskInput.addEventListener("blur", runEvent);
+// Cut
+// taskInput.addEventListener("cut", runEvent);
+// Paste
+// taskInput.addEventListener("paste", runEvent);
+// Input
+taskInput.addEventListener("input", runEvent);
+function runEvent(e) {
+  console.log(`Event type : ${e.type}`);
+
+  // console.log(e.target.va lue);
+
+  heading.innerText = e.target.value;
+  // Get input value
+  // console.log(taskInput.value);
+  // e.preventDefault();
 }
