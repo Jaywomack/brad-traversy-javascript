@@ -444,15 +444,67 @@
 
 // delItem.addEventListener("click", deleteItem);
 
-document.body.addEventListener("click", deleteItem);
+// document.body.addEventListener("click", deleteItem);
 
-function deleteItem(e) {
-  // if (e.target.parentElement.className === "delete-item secondary-content") {
-  //   console.log("delete item");
-  // }
+// function deleteItem(e) {
+//   // if (e.target.parentElement.className === "delete-item secondary-content") {
+//   //   console.log("delete item");
+//   // }
 
-  if (event.target.parentElement.classList.contains("delete-item")) {
-    console.log("delete-item");
-    e.target.parentElement.parentElement.remove();
+//   if (event.target.parentElement.classList.contains("delete-item")) {
+//     console.log("delete-item");
+//     e.target.parentElement.parentElement.remove();
+//   }
+// }
+
+/***
+ *
+ * Local and session storage
+ * To store in local storage it must be a string. To save an array use JSON.stringify()
+ * To take back out and use it use the method JSON.parse()
+ */
+
+// local storage will stay until it is removed
+// session storage will stay until the browser is closed
+
+// set local storage item
+// localStorage.setItem("name", "John");
+// localStorage.setItem("age", "30");
+// // set session storage item
+// // sessionStorage.setItem("name", "Beth");
+
+// // remove from storage
+// // localStorage.removeItem("name");
+
+// // Get value from storage
+// const name = localStorage.getItem("name");
+// const age = localStorage.getItem("age");
+
+// // clear local storage
+// localStorage.clear();
+// console.log(name, age);
+
+document.querySelector("form").addEventListener("submit", function(e) {
+  const task = document.getElementById("task").value;
+
+  let tasks;
+  if (localStorage.getItem("tasks") === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem("tasks"));
   }
-}
+
+  tasks.push(task);
+
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  console.log(task);
+  alert("Task Saved");
+
+  e.preventDefault();
+});
+
+const tasks = JSON.parse(localStorage.getItem("tasks"));
+
+tasks.forEach(function(task) {
+  console.log(task);
+});
