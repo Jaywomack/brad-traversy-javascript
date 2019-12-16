@@ -232,9 +232,16 @@ class Customer extends Person {
     this.phone = phone;
     this.membership = membership;
   }
+
+  static getMembershipCost() {
+    return 500;
+  }
 }
 
 const john = new Customer("John", "Doe", "555-555-5555", "Standard");
 
 // There is access to the methods on the parent class because the sub class extends the parent class That is why the greeting still works
 console.log(john.greeting());
+
+// use static method
+console.log(Customer.getMembershipCost());
